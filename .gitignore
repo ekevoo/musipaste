@@ -1,4 +1,13 @@
 /.idea
 /ydl
 __pycache__/
+*.pyc
 
+# Media files
+*.3gp
+*.aac
+*.avi
+*.m4a
+*.mp?
+*.mov
+*.webm

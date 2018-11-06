@@ -45,6 +45,7 @@ def pull(items):
     YoutubeDL = ensure_ydl()
     ydl_options = {
         'ignoreerrors': True,
+        'format': 251,  # DASH audio,141k, opus @160k, 5.90MiB
         'outtmpl': join(base_path, '%(title)s %(uploader)s-%(id)s.%(ext)s'),
     }
     with YoutubeDL(ydl_options) as youtube_dl:
@@ -56,12 +57,12 @@ def main():
     print('------------------------------------------------------------------------')
     print('')
     if clipboard:
-        print('Nothing on the clipboard.')
-    else:
         print('Clipboard contents:')
         for i in clipboard:
             print('-', i)
         pull(clipboard)
+    else:
+        print('Nothing on the clipboard.')
     print('')
     print('------------------------------------------------------------------------')
     print('')
